@@ -34,7 +34,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       with:
-        repository: {Thehamop1}/PersonalProject
+        repository: {owner}/repo
         token: ${{ secrets.PRIVATE_TOKEN_GITHUB }}
         submodules: true
 
