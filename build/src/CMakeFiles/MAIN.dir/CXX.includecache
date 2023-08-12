@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/LRU.hpp
+iostream
+-
+unordered_map
+-
+map
+-
+list
+-
+memory
+-
+atomic
+-
+
+/home/thehamop/Github/PersonalProject/src/main.cpp
+iostream
+-
+LRU.hpp
+/home/thehamop/Github/PersonalProject/src/LRU.hpp
+

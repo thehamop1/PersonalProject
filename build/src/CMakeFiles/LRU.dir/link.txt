@@ -1,0 +1,2 @@
+/bin/ar qc libLRU.a  CMakeFiles/LRU.dir/LRU.cpp.o
+/bin/ranlib libLRU.a

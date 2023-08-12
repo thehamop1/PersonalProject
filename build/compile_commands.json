@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/src",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include  -Wall -m64 -g3 -O0   -std=gnu++2a -o CMakeFiles/MAIN.dir/main.cpp.o -c /home/thehamop/Github/PersonalProject/src/main.cpp",
+  "file": "/home/thehamop/Github/PersonalProject/src/main.cpp"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/src",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include  -Wall -m64 -g3 -O0   -std=gnu++2a -o CMakeFiles/LRU.dir/LRU.cpp.o -c /home/thehamop/Github/PersonalProject/src/LRU.cpp",
+  "file": "/home/thehamop/Github/PersonalProject/src/LRU.cpp"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/googletest/googlemock",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include -isystem /home/thehamop/Github/PersonalProject/googletest/googlemock/include -isystem /home/thehamop/Github/PersonalProject/googletest/googlemock -isystem /home/thehamop/Github/PersonalProject/googletest/googletest/include -isystem /home/thehamop/Github/PersonalProject/googletest/googletest  -Wall -m64 -g3 -O0   -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++2a -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /home/thehamop/Github/PersonalProject/googletest/googlemock/src/gmock_main.cc",
+  "file": "/home/thehamop/Github/PersonalProject/googletest/googlemock/src/gmock_main.cc"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/googletest/googlemock",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include -I/home/thehamop/Github/PersonalProject/googletest/googlemock/include -I/home/thehamop/Github/PersonalProject/googletest/googlemock -isystem /home/thehamop/Github/PersonalProject/googletest/googletest/include -isystem /home/thehamop/Github/PersonalProject/googletest/googletest  -Wall -m64 -g3 -O0   -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++2a -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /home/thehamop/Github/PersonalProject/googletest/googlemock/src/gmock-all.cc",
+  "file": "/home/thehamop/Github/PersonalProject/googletest/googlemock/src/gmock-all.cc"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/googletest/googletest",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include -isystem /home/thehamop/Github/PersonalProject/googletest/googletest/include -isystem /home/thehamop/Github/PersonalProject/googletest/googletest  -Wall -m64 -g3 -O0   -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++2a -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /home/thehamop/Github/PersonalProject/googletest/googletest/src/gtest_main.cc",
+  "file": "/home/thehamop/Github/PersonalProject/googletest/googletest/src/gtest_main.cc"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/googletest/googletest",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include -I/home/thehamop/Github/PersonalProject/googletest/googletest/include -I/home/thehamop/Github/PersonalProject/googletest/googletest  -Wall -m64 -g3 -O0   -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers -std=c++2a -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /home/thehamop/Github/PersonalProject/googletest/googletest/src/gtest-all.cc",
+  "file": "/home/thehamop/Github/PersonalProject/googletest/googletest/src/gtest-all.cc"
+},
+{
+  "directory": "/home/thehamop/Github/PersonalProject/build/test",
+  "command": "/bin/x86_64-linux-gnu-g++-9   -I/home/thehamop/Github/PersonalProject/include -I/home/thehamop/Github/PersonalProject/googletest -isystem /home/thehamop/Github/PersonalProject/googletest/googletest/include -isystem /home/thehamop/Github/PersonalProject/googletest/googletest -isystem /home/thehamop/Github/PersonalProject/googletest/googlemock/include -isystem /home/thehamop/Github/PersonalProject/googletest/googlemock  -Wall -m64 -g3 -O0   -std=gnu++2a -o CMakeFiles/LRUTEST.dir/LRUTest.cpp.o -c /home/thehamop/Github/PersonalProject/test/LRUTest.cpp",
+  "file": "/home/thehamop/Github/PersonalProject/test/LRUTest.cpp"
+}
+]
