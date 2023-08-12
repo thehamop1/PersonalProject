@@ -168,46 +168,46 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/LRUTEST.dir/rule:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LRUTEST.dir/rule
-.PHONY : test/CMakeFiles/LRUTEST.dir/rule
+test/CMakeFiles/ThreadSafeQueue.dir/rule:
+	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/ThreadSafeQueue.dir/rule
+.PHONY : test/CMakeFiles/ThreadSafeQueue.dir/rule
 
 # Convenience name for target.
-LRUTEST: test/CMakeFiles/LRUTEST.dir/rule
+ThreadSafeQueue: test/CMakeFiles/ThreadSafeQueue.dir/rule
 
-.PHONY : LRUTEST
+.PHONY : ThreadSafeQueue
 
 # fast build rule for target.
-LRUTEST/fast:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/build
-.PHONY : LRUTEST/fast
+ThreadSafeQueue/fast:
+	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/build
+.PHONY : ThreadSafeQueue/fast
 
-LRUTest.o: LRUTest.cpp.o
+ThreadSafeQueue.o: ThreadSafeQueue.cpp.o
 
-.PHONY : LRUTest.o
+.PHONY : ThreadSafeQueue.o
 
 # target to build an object file
-LRUTest.cpp.o:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/LRUTest.cpp.o
-.PHONY : LRUTest.cpp.o
+ThreadSafeQueue.cpp.o:
+	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/ThreadSafeQueue.cpp.o
+.PHONY : ThreadSafeQueue.cpp.o
 
-LRUTest.i: LRUTest.cpp.i
+ThreadSafeQueue.i: ThreadSafeQueue.cpp.i
 
-.PHONY : LRUTest.i
+.PHONY : ThreadSafeQueue.i
 
 # target to preprocess a source file
-LRUTest.cpp.i:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/LRUTest.cpp.i
-.PHONY : LRUTest.cpp.i
+ThreadSafeQueue.cpp.i:
+	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/ThreadSafeQueue.cpp.i
+.PHONY : ThreadSafeQueue.cpp.i
 
-LRUTest.s: LRUTest.cpp.s
+ThreadSafeQueue.s: ThreadSafeQueue.cpp.s
 
-.PHONY : LRUTest.s
+.PHONY : ThreadSafeQueue.s
 
 # target to generate assembly for a file
-LRUTest.cpp.s:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/LRUTest.cpp.s
-.PHONY : LRUTest.cpp.s
+ThreadSafeQueue.cpp.s:
+	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/ThreadSafeQueue.cpp.s
+.PHONY : ThreadSafeQueue.cpp.s
 
 # Help Target
 help:
@@ -222,10 +222,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... LRUTEST"
-	@echo "... LRUTest.o"
-	@echo "... LRUTest.i"
-	@echo "... LRUTest.s"
+	@echo "... ThreadSafeQueue"
+	@echo "... ThreadSafeQueue.o"
+	@echo "... ThreadSafeQueue.i"
+	@echo "... ThreadSafeQueue.s"
 .PHONY : help
 
 

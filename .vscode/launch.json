@@ -26,7 +26,7 @@
             "name": "GTest",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/bin/LRUTEST",
+            "program": "${workspaceFolder}/build/bin/ThreadSafeQueue",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

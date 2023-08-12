@@ -138,7 +138,6 @@ googletest/googletest/clean: googletest/googletest/CMakeFiles/gtest.dir/clean
 
 # Recursive "all" directory target.
 src/all: src/CMakeFiles/MAIN.dir/all
-src/all: src/CMakeFiles/LRU.dir/all
 
 .PHONY : src/all
 
@@ -149,7 +148,6 @@ src/preinstall:
 
 # Recursive "clean" directory target.
 src/clean: src/CMakeFiles/MAIN.dir/clean
-src/clean: src/CMakeFiles/LRU.dir/clean
 
 .PHONY : src/clean
 
@@ -157,7 +155,7 @@ src/clean: src/CMakeFiles/LRU.dir/clean
 # Directory level rules for directory test
 
 # Recursive "all" directory target.
-test/all: test/CMakeFiles/LRUTEST.dir/all
+test/all: test/CMakeFiles/ThreadSafeQueue.dir/all
 
 .PHONY : test/all
 
@@ -167,7 +165,7 @@ test/preinstall:
 .PHONY : test/preinstall
 
 # Recursive "clean" directory target.
-test/clean: test/CMakeFiles/LRUTEST.dir/clean
+test/clean: test/CMakeFiles/ThreadSafeQueue.dir/clean
 
 .PHONY : test/clean
 
@@ -175,15 +173,15 @@ test/clean: test/CMakeFiles/LRUTEST.dir/clean
 # Target rules for target src/CMakeFiles/MAIN.dir
 
 # All Build rule for target.
-src/CMakeFiles/MAIN.dir/all: src/CMakeFiles/LRU.dir/all
+src/CMakeFiles/MAIN.dir/all:
 	$(MAKE) -f src/CMakeFiles/MAIN.dir/build.make src/CMakeFiles/MAIN.dir/depend
 	$(MAKE) -f src/CMakeFiles/MAIN.dir/build.make src/CMakeFiles/MAIN.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=5,6 "Built target MAIN"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=1,2 "Built target MAIN"
 .PHONY : src/CMakeFiles/MAIN.dir/all
 
 # Build rule for subdir invocation for target.
 src/CMakeFiles/MAIN.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/MAIN.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 0
 .PHONY : src/CMakeFiles/MAIN.dir/rule
@@ -199,33 +197,6 @@ src/CMakeFiles/MAIN.dir/clean:
 .PHONY : src/CMakeFiles/MAIN.dir/clean
 
 #=============================================================================
-# Target rules for target src/CMakeFiles/LRU.dir
-
-# All Build rule for target.
-src/CMakeFiles/LRU.dir/all:
-	$(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/depend
-	$(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=1,2 "Built target LRU"
-.PHONY : src/CMakeFiles/LRU.dir/all
-
-# Build rule for subdir invocation for target.
-src/CMakeFiles/LRU.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/LRU.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 0
-.PHONY : src/CMakeFiles/LRU.dir/rule
-
-# Convenience name for target.
-LRU: src/CMakeFiles/LRU.dir/rule
-
-.PHONY : LRU
-
-# clean rule for target.
-src/CMakeFiles/LRU.dir/clean:
-	$(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/clean
-.PHONY : src/CMakeFiles/LRU.dir/clean
-
-#=============================================================================
 # Target rules for target googletest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
@@ -233,7 +204,7 @@ googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googlemock/CMake
 googletest/googlemock/CMakeFiles/gmock_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock_main.dir/build.make googletest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=9,10 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=7,8 "Built target gmock_main"
 .PHONY : googletest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -260,7 +231,7 @@ googletest/googlemock/CMakeFiles/gmock_main.dir/clean:
 googletest/googlemock/CMakeFiles/gmock.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f googletest/googlemock/CMakeFiles/gmock.dir/build.make googletest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=7,8 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=5,6 "Built target gmock"
 .PHONY : googletest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -287,7 +258,7 @@ googletest/googlemock/CMakeFiles/gmock.dir/clean:
 googletest/googletest/CMakeFiles/gtest_main.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f googletest/googletest/CMakeFiles/gtest_main.dir/build.make googletest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=13,14 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : googletest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -314,7 +285,7 @@ googletest/googletest/CMakeFiles/gtest_main.dir/clean:
 googletest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f googletest/googletest/CMakeFiles/gtest.dir/build.make googletest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=11,12 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -335,34 +306,33 @@ googletest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : googletest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target test/CMakeFiles/LRUTEST.dir
+# Target rules for target test/CMakeFiles/ThreadSafeQueue.dir
 
 # All Build rule for target.
-test/CMakeFiles/LRUTEST.dir/all: src/CMakeFiles/LRU.dir/all
-test/CMakeFiles/LRUTEST.dir/all: googletest/googlemock/CMakeFiles/gmock.dir/all
-test/CMakeFiles/LRUTEST.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
-test/CMakeFiles/LRUTEST.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
-	$(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/depend
-	$(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=3,4 "Built target LRUTEST"
-.PHONY : test/CMakeFiles/LRUTEST.dir/all
+test/CMakeFiles/ThreadSafeQueue.dir/all: googletest/googlemock/CMakeFiles/gmock.dir/all
+test/CMakeFiles/ThreadSafeQueue.dir/all: googletest/googletest/CMakeFiles/gtest_main.dir/all
+test/CMakeFiles/ThreadSafeQueue.dir/all: googletest/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/depend
+	$(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=3,4 "Built target ThreadSafeQueue"
+.PHONY : test/CMakeFiles/ThreadSafeQueue.dir/all
 
 # Build rule for subdir invocation for target.
-test/CMakeFiles/LRUTEST.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 10
-	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/LRUTEST.dir/all
+test/CMakeFiles/ThreadSafeQueue.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 test/CMakeFiles/ThreadSafeQueue.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/thehamop/Github/PersonalProject/build/CMakeFiles 0
-.PHONY : test/CMakeFiles/LRUTEST.dir/rule
+.PHONY : test/CMakeFiles/ThreadSafeQueue.dir/rule
 
 # Convenience name for target.
-LRUTEST: test/CMakeFiles/LRUTEST.dir/rule
+ThreadSafeQueue: test/CMakeFiles/ThreadSafeQueue.dir/rule
 
-.PHONY : LRUTEST
+.PHONY : ThreadSafeQueue
 
 # clean rule for target.
-test/CMakeFiles/LRUTEST.dir/clean:
-	$(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/clean
-.PHONY : test/CMakeFiles/LRUTEST.dir/clean
+test/CMakeFiles/ThreadSafeQueue.dir/clean:
+	$(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/clean
+.PHONY : test/CMakeFiles/ThreadSafeQueue.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

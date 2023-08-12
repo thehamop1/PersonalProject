@@ -4,4 +4,4 @@
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
-include("/home/thehamop/Github/PersonalProject/build/test/LRUTEST[1]_include.cmake")
+include("/home/thehamop/Github/PersonalProject/build/test/ThreadSafeQueue[1]_include.cmake")

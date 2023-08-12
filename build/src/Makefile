@@ -182,48 +182,6 @@ MAIN/fast:
 	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f src/CMakeFiles/MAIN.dir/build.make src/CMakeFiles/MAIN.dir/build
 .PHONY : MAIN/fast
 
-# Convenience name for target.
-src/CMakeFiles/LRU.dir/rule:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/LRU.dir/rule
-.PHONY : src/CMakeFiles/LRU.dir/rule
-
-# Convenience name for target.
-LRU: src/CMakeFiles/LRU.dir/rule
-
-.PHONY : LRU
-
-# fast build rule for target.
-LRU/fast:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/build
-.PHONY : LRU/fast
-
-LRU.o: LRU.cpp.o
-
-.PHONY : LRU.o
-
-# target to build an object file
-LRU.cpp.o:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/LRU.cpp.o
-.PHONY : LRU.cpp.o
-
-LRU.i: LRU.cpp.i
-
-.PHONY : LRU.i
-
-# target to preprocess a source file
-LRU.cpp.i:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/LRU.cpp.i
-.PHONY : LRU.cpp.i
-
-LRU.s: LRU.cpp.s
-
-.PHONY : LRU.s
-
-# target to generate assembly for a file
-LRU.cpp.s:
-	cd /home/thehamop/Github/PersonalProject/build && $(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/LRU.cpp.s
-.PHONY : LRU.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -265,10 +223,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... MAIN"
-	@echo "... LRU"
-	@echo "... LRU.o"
-	@echo "... LRU.i"
-	@echo "... LRU.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

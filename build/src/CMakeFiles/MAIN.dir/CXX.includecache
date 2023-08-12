@@ -6,23 +6,15 @@
 
 #IncludeRegexTransform: 
 
-../include/LRU.hpp
-iostream
+../include/Queue.hpp
+queue
 -
-unordered_map
--
-map
--
-list
--
-memory
--
-atomic
+mutex
 -
 
 /home/thehamop/Github/PersonalProject/src/main.cpp
 iostream
 -
-LRU.hpp
-/home/thehamop/Github/PersonalProject/src/LRU.hpp
+Queue.hpp
+/home/thehamop/Github/PersonalProject/src/Queue.hpp
 

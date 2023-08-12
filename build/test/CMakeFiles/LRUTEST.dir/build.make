@@ -82,7 +82,6 @@ bin/LRUTEST: test/CMakeFiles/LRUTEST.dir/build.make
 bin/LRUTEST: lib/libgtest.a
 bin/LRUTEST: lib/libgmock.a
 bin/LRUTEST: lib/libgtest_main.a
-bin/LRUTEST: src/libLRU.a
 bin/LRUTEST: lib/libgtest.a
 bin/LRUTEST: test/CMakeFiles/LRUTEST.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/LRUTEST"

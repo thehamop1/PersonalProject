@@ -181,19 +181,6 @@ MAIN/fast:
 .PHONY : MAIN/fast
 
 #=============================================================================
-# Target rules for targets named LRU
-
-# Build rule for target.
-LRU: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LRU
-.PHONY : LRU
-
-# fast build rule for target.
-LRU/fast:
-	$(MAKE) -f src/CMakeFiles/LRU.dir/build.make src/CMakeFiles/LRU.dir/build
-.PHONY : LRU/fast
-
-#=============================================================================
 # Target rules for targets named gmock_main
 
 # Build rule for target.
@@ -246,17 +233,17 @@ gtest/fast:
 .PHONY : gtest/fast
 
 #=============================================================================
-# Target rules for targets named LRUTEST
+# Target rules for targets named ThreadSafeQueue
 
 # Build rule for target.
-LRUTEST: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LRUTEST
-.PHONY : LRUTEST
+ThreadSafeQueue: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ThreadSafeQueue
+.PHONY : ThreadSafeQueue
 
 # fast build rule for target.
-LRUTEST/fast:
-	$(MAKE) -f test/CMakeFiles/LRUTEST.dir/build.make test/CMakeFiles/LRUTEST.dir/build
-.PHONY : LRUTEST/fast
+ThreadSafeQueue/fast:
+	$(MAKE) -f test/CMakeFiles/ThreadSafeQueue.dir/build.make test/CMakeFiles/ThreadSafeQueue.dir/build
+.PHONY : ThreadSafeQueue/fast
 
 # Help Target
 help:
@@ -272,12 +259,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... MAIN"
-	@echo "... LRU"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
-	@echo "... LRUTEST"
+	@echo "... ThreadSafeQueue"
 .PHONY : help
 
 

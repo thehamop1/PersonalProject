@@ -79,7 +79,6 @@ MAIN_EXTERNAL_OBJECTS =
 
 bin/MAIN: src/CMakeFiles/MAIN.dir/main.cpp.o
 bin/MAIN: src/CMakeFiles/MAIN.dir/build.make
-bin/MAIN: src/libLRU.a
 bin/MAIN: src/CMakeFiles/MAIN.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/thehamop/Github/PersonalProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/MAIN"
 	cd /home/thehamop/Github/PersonalProject/build/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MAIN.dir/link.txt --verbose=$(VERBOSE)

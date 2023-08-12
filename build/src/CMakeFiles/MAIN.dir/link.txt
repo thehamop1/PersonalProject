@@ -1,1 +1,1 @@
-/bin/x86_64-linux-gnu-g++-9  -Wall -m64 -g3 -O0   CMakeFiles/MAIN.dir/main.cpp.o  -o ../bin/MAIN  libLRU.a 
+/bin/x86_64-linux-gnu-g++-9  -Wall -m64 -g3 -O0   CMakeFiles/MAIN.dir/main.cpp.o  -o ../bin/MAIN 
