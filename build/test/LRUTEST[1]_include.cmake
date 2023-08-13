@@ -1,5 +1,0 @@
-if(EXISTS "/home/thehamop/Github/PersonalProject/build/test/LRUTEST[1]_tests.cmake")
-  include("/home/thehamop/Github/PersonalProject/build/test/LRUTEST[1]_tests.cmake")
-else()
-  add_test(LRUTEST_NOT_BUILT LRUTEST_NOT_BUILT)
-endif()
