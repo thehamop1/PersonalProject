@@ -11,7 +11,7 @@ class HangDetector
 {
 private:
     HangDetector();
-    ~HangDetector() = default;
+    ~HangDetector();
     void WatchDogFunction();
 
     static const std::chrono::seconds m_TimeOutDuration;
@@ -21,7 +21,7 @@ private:
     std::unordered_map<std::thread::id, TimePoint> m_ThreadHeartBeats;
 
 public:
-    HangDetector& Instance(){
+    static HangDetector& Instance(){
         static HangDetector Instance{};
         return Instance;
     }

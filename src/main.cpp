@@ -1,7 +1,7 @@
 #include <iostream>
-#include "Queue.hpp"
+#include "Core.hpp"
 
 int main()
 {
-
+  HangDetector::Instance();
 }
