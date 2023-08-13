@@ -1,8 +1,7 @@
 #include <iostream>
-#include "LRU.hpp"
+#include "Core.hpp"
 
 int main()
 {
-  std::cout << "Hello World" << std::endl;
-  return 0;
+  HangDetector::Instance();
 }

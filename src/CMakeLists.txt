@@ -1,12 +1,12 @@
-set(LRU_SRCS
-    LRU.cpp
+set(CORE_SRCS
+    HangDetector.cpp
 )
 
 set(MAIN_SRCS
     main.cpp
 )
 
-add_library(LRU ${LRU_SRCS})
+add_library(CORE ${CORE_SRCS})
 
 add_executable(MAIN ${MAIN_SRCS})
-target_link_libraries(MAIN LRU)
+target_link_libraries(MAIN CORE)
