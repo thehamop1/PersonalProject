@@ -21,6 +21,9 @@ namespace Core{
 
         LoggingSystem::~LoggingSystem()
         {
+            if(m_loggingThread.joinable()){
+                m_loggingThread.join();
+            }
         }
 
         void LoggingSystem::LoggingThread(){

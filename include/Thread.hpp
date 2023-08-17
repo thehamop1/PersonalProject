@@ -11,9 +11,11 @@ namespace Core{
         std::thread m_thread;
         virtual void Work() = 0;
         void ThreadDef();
+     
     public:
+        void Join();
         void Start();
         Thread();
-        ~Thread();
+        virtual ~Thread()=default;
     };
 };

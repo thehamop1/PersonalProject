@@ -1,4 +1,4 @@
 #pragma once
 #include <atomic>
 
-static std::atomic_bool G_SHUTDOWN{false};
+extern std::atomic_bool G_SHUTDOWN;

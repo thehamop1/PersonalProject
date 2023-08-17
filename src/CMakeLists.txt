@@ -2,6 +2,7 @@ set(CORE_SRCS
     HangDetector.cpp
     Logger.cpp
     Thread.cpp
+    Global.cpp
 )
 
 set(MAIN_SRCS

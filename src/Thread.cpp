@@ -6,16 +6,15 @@ namespace Core{
 
     void Thread::Start(){
         std::call_once(startFlag, [&](){
-            m_thread = std::thread([&](){
-                ThreadDef();
-            });
+            m_thread = std::thread([&](){ ThreadDef(); });
         });
         Core::HangDetector::Instance().AddThread(m_thread.get_id());
     };
 
-    Thread::~Thread()
-    {
-        m_thread.join();
+    void Thread::Join(){
+        if(m_thread.joinable()){
+            m_thread.join();
+        }
     }
 
     void Thread::ThreadDef(){
