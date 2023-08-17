@@ -2,12 +2,28 @@
 
 namespace Core{
     namespace Internal{
-        Logger::Logger()
+        LoggingSystem::LoggingSystem()
+        {
+
+        }
+
+        LoggingSystem::~LoggingSystem()
         {
         }
 
-        Logger::~Logger()
-        {
-        }
+        void LoggingSystem::QueueLog(const std::string&& log){
+            std::scoped_lock lock(m_queueLock);
+            m_loggingStatements.push(log);
+            return true;
+        };
+
+        LogBuilder::LogBuilder(const LOGGING_LEVEL& LogLevel){
+            m_logLevel = LogLevel;
+        };
+
+        LogBuilder::~LogBuilder(){
+            Logger::Instance().QueueLog(m_logLine.str());
+        };
+
     };
 };

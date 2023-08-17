@@ -3,30 +3,53 @@
 
 #include <queue>
 #include <atomic>
+#include <sstream>
+#include <mutex>
+#include <iostream>
 
-enum class LOGGING_LEVEL{
-    VERBOSE,
-    INFO,
-    WARNING,
-    ERROR,
-};
-
-class LOG{
-
-};
 
 namespace Core{
+    enum class LOGGING_LEVEL{
+        VERBOSE,
+        INFO,
+        WARNING,
+        ERROR,
+    };
+
     namespace Internal{
-        class Logger
+        class LoggingSystem
         {
         private:
             std::atomic<bool> m_enabled=true;
-
+            std::mutex m_queueLock;
+            std::queue<std::string> m_loggingStatements;
         public:
-            Logger();
-            ~Logger();
+            bool QueueLog(const std::string&& log);
+            LoggingSystem();
+            ~LoggingSystem();
+        };
+        using Logger = Core::Singleton<Core::Internal::LoggingSystem>;
+
+        class LogBuilder{
+            private:
+                LOGGING_LEVEL m_logLevel=LOGGING_LEVEL::VERBOSE;
+                std::stringstream m_logLine;
+            public:
+                LogBuilder(const LOGGING_LEVEL& LogLevel);
+                ~LogBuilder();
+
+                template<typename T>
+                LogBuilder& operator<<(const T& data){
+                    m_logLine << data;
+                    return *this;
+                };
         };
     };
-};
 
-using Logger = Core::Singleton<Core::Internal::Logger>;
+    static Internal::LogBuilder LOG(const LOGGING_LEVEL& LogLevel, std::string_view log){
+        Internal::Logger::Instance().QueueLog(log);
+    }
+    static Internal::LogBuilder LOG(const LOGGING_LEVEL& LogLevel){
+        return Internal::LogBuilder(LogLevel);
+    };
+};

@@ -4,4 +4,4 @@
 int main()
 {
   Core::HangDetector::Instance();
-}
+};
