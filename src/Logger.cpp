@@ -32,6 +32,7 @@ namespace Core{
                     m_loggingStatements.pop();
                 }
                 m_file << logLine;
+                std::cout << logLine;
                 std::this_thread::sleep_for(std::chrono::seconds(1));
             }
             m_file.close();
