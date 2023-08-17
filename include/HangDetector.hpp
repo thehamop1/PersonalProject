@@ -6,6 +6,7 @@
 #include <mutex>
 #include <unordered_map>
 #include <chrono>
+#include <Logger.hpp>
 namespace Core{
     namespace Internal{
         class HangDetector
@@ -23,6 +24,18 @@ namespace Core{
         public:
             HangDetector();
             ~HangDetector();
+            void UpdateEntry(const std::thread::id& id){
+                if(!m_ThreadHeartBeats.contains(id)){
+                    LOG(Core::LOGGING_LEVEL::ERROR) << "No thread id found in hang detector.";
+                    return;
+                }
+                m_ThreadHeartBeats[id] = std::chrono::system_clock::now();
+            };
+            void AddThread(const std::thread::id& id){
+                if(m_ThreadHeartBeats.contains(id))
+                    LOG(Core::LOGGING_LEVEL::WARNING) << "Duplicate thread id added to hang detector";
+                m_ThreadHeartBeats[id] = std::chrono::system_clock::now();
+            };
         };
     };
     using HangDetector = Core::Singleton<Core::Internal::HangDetector>;

@@ -1,11 +1,17 @@
 #pragma once
 #include "Singleton.hpp"
+#include "Global.hpp"
 
 #include <queue>
 #include <atomic>
 #include <sstream>
 #include <mutex>
 #include <iostream>
+#include <chrono>
+#include <iomanip>
+#include <ctime>
+#include <fstream>
+#include <thread>
 
 
 namespace Core{
@@ -20,11 +26,15 @@ namespace Core{
         class LoggingSystem
         {
         private:
-            std::atomic<bool> m_enabled=true;
+            std::ofstream m_file;
+            std::thread m_loggingThread;
+            std::atomic<bool> m_enabled{true};
             std::mutex m_queueLock;
             std::queue<std::string> m_loggingStatements;
+            void LoggingThread();
         public:
-            bool QueueLog(const std::string&& log);
+            std::string FileName();
+            void QueueLog(const std::string&& log);
             LoggingSystem();
             ~LoggingSystem();
         };
@@ -46,9 +56,6 @@ namespace Core{
         };
     };
 
-    static Internal::LogBuilder LOG(const LOGGING_LEVEL& LogLevel, std::string_view log){
-        Internal::Logger::Instance().QueueLog(log);
-    }
     static Internal::LogBuilder LOG(const LOGGING_LEVEL& LogLevel){
         return Internal::LogBuilder(LogLevel);
     };
