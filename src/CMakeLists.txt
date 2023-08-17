@@ -1,5 +1,6 @@
 set(CORE_SRCS
     HangDetector.cpp
+    Logger.cpp
 )
 
 set(MAIN_SRCS

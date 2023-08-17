@@ -3,5 +3,5 @@
 
 int main()
 {
-  HangDetector::Instance();
+  Core::HangDetector::Instance();
 }
