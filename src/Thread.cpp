@@ -5,7 +5,7 @@ namespace Core{
     }
 
     void Thread::Start(){
-        std::call_once(startFlag, [&](){
+        std::call_once(m_startFlag, [&](){
             m_thread = std::thread([&](){ ThreadDef(); });
         });
         Core::HangDetector::Instance().AddThread(m_thread.get_id());

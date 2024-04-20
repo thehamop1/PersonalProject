@@ -7,7 +7,7 @@ namespace Core{
     class Thread
     {
     private:
-        std::once_flag startFlag;
+        std::once_flag m_startFlag;
         std::thread m_thread;
         virtual void Work() = 0;
         void ThreadDef();

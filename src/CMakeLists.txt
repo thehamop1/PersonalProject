@@ -1,6 +1,7 @@
 set(CORE_SRCS
     HangDetector.cpp
     Logger.cpp
+    ConfigReader.cpp
     Thread.cpp
     Global.cpp
 )
