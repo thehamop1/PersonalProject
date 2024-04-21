@@ -1,10 +1,19 @@
 #include "Logger.hpp"
+#include "Config.hpp"
 
 namespace Core{
     namespace Internal{
         LoggingSystem::LoggingSystem()
         {
-            std::string fileName{"SystemLog_" + FileName() + ".txt"};
+            std::string LogDirectory{""};
+            Core::Config::Instance().GetValue(BASE_CONFIG_FILE, "log_directory", LogDirectory);
+
+            std::string fileName{LogDirectory + "SystemLog_" + FileName() + ".txt"};
+            if(!std::filesystem::exists(LogDirectory)){
+                std::filesystem::path newFilePath{fileName};
+                std::filesystem::create_directories(newFilePath.parent_path());
+            }
+
             m_file.open(fileName, std::ofstream::out | std::ofstream::app);
             m_loggingThread = std::thread([&](){LoggingThread();});
         }
@@ -31,8 +40,10 @@ namespace Core{
             while(!G_SHUTDOWN){
                 {
                     std::scoped_lock lock{m_queueLock};
-                    logLine = m_loggingStatements.front();
-                    m_loggingStatements.pop();
+                    if(!m_loggingStatements.empty()){
+                        logLine = m_loggingStatements.front();
+                        m_loggingStatements.pop();
+                    }
                 }
                 m_file << logLine;
                 std::cout << logLine;
