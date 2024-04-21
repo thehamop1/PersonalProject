@@ -16,10 +16,16 @@
 
 namespace Core{
     enum class LOGGING_LEVEL{
-        VERBOSE,
-        INFO,
-        WARNING,
-        ERROR,
+        VERBOSE=0,
+        INFO=1,
+        WARNING=2,
+        ERROR=3,
+    };
+    static constexpr std::array<std::string_view, 4> LOGGING_LEVEL_TO_STRING{
+        "VERBOSE",
+        "INFO",
+        "WARNING",
+        "ERROR"
     };
 
     namespace Internal{

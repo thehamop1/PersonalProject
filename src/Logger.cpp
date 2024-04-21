@@ -63,6 +63,7 @@ namespace Core{
 
         LogBuilder::LogBuilder(const LOGGING_LEVEL& LogLevel){
             m_logLevel = LogLevel;
+            m_logLine << LOGGING_LEVEL_TO_STRING[static_cast<size_t>(m_logLevel)] << "::";
         };
 
         LogBuilder::~LogBuilder(){
