@@ -9,6 +9,9 @@ SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin)
 set(CMAKE_CXX_FLAGS_DEBUG "-Wall -m64 -g3 -O0 -pthread -fsanitize=thread")
 set(CMAKE_CXX_FLAGS_RELEASE "-Wall -m64 -O3 -DNDEBUG -pthread")
 
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+
 include_directories(include)
 add_subdirectory(src)
 

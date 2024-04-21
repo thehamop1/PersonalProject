@@ -20,7 +20,7 @@ namespace Core
             {
                 m_ConfigFiles.emplace(file.filename().generic_string(), file);
             }
-
+            std::cout << "WOW" << std::endl;
         }
     }
 }

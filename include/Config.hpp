@@ -15,7 +15,6 @@ namespace Core
 {
     namespace Internal
     {
-
         class Config
         {
         public:
@@ -70,7 +69,6 @@ namespace Core
                     {
                         ParseLine(key, value);
                     }
-                    std::cout << "WOW" << std::endl;
                 }
 
             private:
@@ -85,7 +83,7 @@ namespace Core
                     {
                         try
                         {
-                            InsertData(key, std::stoi({value}));
+                            InsertData(key, std::stoi(value));
                         }
                         catch (...)
                         {
