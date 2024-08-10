@@ -4,3 +4,4 @@
 #include "HangDetector.hpp"
 #include "Thread.hpp"
 #include "Logger.hpp"
+#include "MemoryPool.hpp"

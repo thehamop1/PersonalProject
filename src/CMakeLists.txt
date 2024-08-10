@@ -3,6 +3,7 @@ set(CORE_SRCS
     Logger.cpp
     Thread.cpp
     Global.cpp
+    MemoryPool.cpp
 )
 
 set(MAIN_SRCS
