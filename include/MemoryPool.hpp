@@ -31,7 +31,7 @@ namespace Core{
             //we'll allocate total memory here
             MemoryPool(const size_t& NumDataFrames) {
                 m_NumberOfElements = NumDataFrames;
-                m_ProcessMemory = {NumDataFrames, {DataFrame<T>, *this}};
+                m_ProcessMemory = {NumDataFrames, {DataFrame<T>(), *this}};
             };
 
             DataFrame<T> Alloc(){
@@ -57,11 +57,11 @@ namespace Core{
         public:
             DataFrame(std::shared_ptr<T> dataFrame, Internal::MemoryPool<T>& poolRef): m_DataFrameCopy{dataFrame}, m_PoolRef{poolRef}{}
             T& operator *(){
-                return m_DataFrameCopy*;
+                return *m_DataFrameCopy;
             }
 
             T& operator ->(){
-                return m_DataFrameCopy*;
+                return *m_DataFrameCopy;
             }
 
             ~DataFrame(){
