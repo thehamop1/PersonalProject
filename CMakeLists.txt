@@ -6,8 +6,12 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_BINARY_DIR})
 SET(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/bin)
 
-set(CMAKE_CXX_FLAGS_DEBUG "-Wall -m64 -g3 -O0 -pthread")
-set(CMAKE_CXX_FLAGS_RELEASE "-Wall -m64 -O3 -DNDEBUG -pthread")
+set(CMAKE_CXX_FLAGS_DEBUG "-Wall -g3 -O0 -pthread")
+set(CMAKE_CXX_FLAGS_RELEASE "-Wall -O3 -DNDEBUG -pthread")
+
+set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
+set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+find_package(Threads REQUIRED)
 
 include_directories(include)
 add_subdirectory(src)
