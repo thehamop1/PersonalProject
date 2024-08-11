@@ -26,9 +26,8 @@ namespace Core{
             //Internal and only accessible from the pointers in the pool
             void Release(DataFrame<T, PoolSize>& frame){
                 std::scoped_lock lock{m_PoolLock};
-                //std::erase_if(m_InUse, [&](const DataFrame<T, PoolSize>& f){return f==frame;});
                 std::remove_if(m_InUse.begin(), m_InUse.end(), [&](const DataFrame<T, PoolSize>& f){return f==frame;});
-                //m_Available.emplace_back(frame);
+                m_Available.emplace_back(frame);
             }
         public:
             //we'll allocate total memory here
