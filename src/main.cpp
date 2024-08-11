@@ -13,9 +13,11 @@
 //   }
 // };
 
+using TestPool = Core::Singleton<Core::Internal::MemoryPool<int, 2>>;
 
 int main()
 {
+  auto frame{TestPool::Instance().Alloc()};
   // std::array<HelloWorld, 4> threads{};
   // for(auto& thread : threads){
   //   thread.Start();
