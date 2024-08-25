@@ -3,3 +3,5 @@ debug/
 build/*
 *.log
 .cache
+tags
+Debug/
