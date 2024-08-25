@@ -3,7 +3,10 @@ set(CORE_SRCS
     Logger.cpp
     Config.cpp
     Thread.cpp
+    GPIO.cpp
+    RPI_GPIO.cpp
     Global.cpp
+    MemoryPool.cpp
 )
 
 set(MAIN_SRCS
@@ -13,4 +16,4 @@ set(MAIN_SRCS
 add_library(CORE ${CORE_SRCS})
 
 add_executable(MAIN ${MAIN_SRCS})
-target_link_libraries(MAIN CORE ${OpenCV_LIBS})
+target_link_libraries(MAIN CORE Threads::Threads ${OpenCV_LIBS})

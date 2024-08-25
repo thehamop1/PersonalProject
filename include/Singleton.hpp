@@ -6,7 +6,7 @@ namespace Core{
     {
     public:
         static T& Instance(){
-            static T Instance;
+            static T Instance{};
             return Instance;
         };
     };
