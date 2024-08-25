@@ -30,6 +30,12 @@ namespace Core{
                 PrintDebugInfo();
 
                 std::scoped_lock lock{m_PoolLock};
+                for(auto it{m_Available.begin()}; it!=m_Available.end();++it){
+                  if(frame==*it){
+                    return;
+                  }
+                }
+                
                 for(auto it{m_InUse.begin()}; it!=m_InUse.end();++it){
                   if(frame==*it){
                     m_InUse.erase(it);
@@ -37,6 +43,7 @@ namespace Core{
                     break;
                   }
                 }
+
                 m_Available.emplace_back(frame);
 
                 std::cout << "After release" << std::endl;
@@ -58,7 +65,14 @@ namespace Core{
             void PrintDebugInfo(){
               std::cout << std::endl;
               std::cout << "m_Available: " << m_Available.size() << std::endl;
+              for(const auto& d: m_Available){
+                d.PrintHash();
+              }
+
               std::cout << "m_InUse: " << m_InUse.size() << std::endl;
+              for(const auto& d: m_InUse){
+                d.PrintHash();
+              }
               std::cout << std::endl;
             }
 
@@ -76,7 +90,7 @@ namespace Core{
         };
     };
 
-    //block access to std::shared_ptr functions
+    //block acmess to std::shared_ptr functions
     template<typename T, size_t PoolSize>
     class DataFrame{
         public:
@@ -89,14 +103,20 @@ namespace Core{
               m_PoolRef{frame.m_PoolRef.get()}{
             }
 
+            void PrintHash() const {
+              std::cout << std::hex << m_DataFrameCopy.get() << std::endl;
+            }
+
             DataFrame& operator = (const T rhs){
                 *m_DataFrameCopy = rhs;
                 return *this;
             }
 
             DataFrame& operator = (const DataFrame& rhs){
-                if(m_DataFrameCopy.use_count()==2)
-                    m_PoolRef.get().Release(*this);
+                if(m_DataFrameCopy.use_count()<=2){
+                  std::cout << "release mem" << std::endl;
+                  m_PoolRef.get().Release(*this);
+                }
 
                 m_DataFrameCopy = rhs.m_DataFrameCopy;
                 m_PoolRef = rhs.m_PoolRef.get();

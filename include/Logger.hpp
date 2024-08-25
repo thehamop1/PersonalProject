@@ -3,16 +3,14 @@
 #include "Global.hpp"
 
 #include <queue>
+#include <iostream>
 #include <atomic>
 #include <sstream>
 #include <mutex>
-#include <iostream>
-#include <chrono>
-#include <iomanip>
 #include <ctime>
 #include <fstream>
 #include <thread>
-
+#include <iomanip>
 
 namespace Core{
     enum class LOGGING_LEVEL{
