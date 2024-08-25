@@ -26,9 +26,6 @@ namespace Core{
 
             //Internal and only accessible from the pointers in the pool
             void Release(DataFrame<T, PoolSize> frame){
-                std::cout << "Right before release" << std::endl;
-                PrintDebugInfo();
-
                 std::scoped_lock lock{m_PoolLock};
                 for(auto it{m_Available.begin()}; it!=m_Available.end();++it){
                   if(frame==*it){
@@ -39,15 +36,11 @@ namespace Core{
                 for(auto it{m_InUse.begin()}; it!=m_InUse.end();++it){
                   if(frame==*it){
                     m_InUse.erase(it);
-                    std::cout << "Erasing Frame" << std::endl;
                     break;
                   }
                 }
 
                 m_Available.emplace_back(frame);
-
-                std::cout << "After release" << std::endl;
-                PrintDebugInfo();
             }
 
         public:
@@ -58,23 +51,7 @@ namespace Core{
                 for(auto& resource: m_Available){
                     resource.m_DataFrameCopy = std::make_shared<T>();
                 }
-
-                PrintDebugInfo();
             };
-
-            void PrintDebugInfo(){
-              std::cout << std::endl;
-              std::cout << "m_Available: " << m_Available.size() << std::endl;
-              for(const auto& d: m_Available){
-                d.PrintHash();
-              }
-
-              std::cout << "m_InUse: " << m_InUse.size() << std::endl;
-              for(const auto& d: m_InUse){
-                d.PrintHash();
-              }
-              std::cout << std::endl;
-            }
 
             DataFrame<T, PoolSize> Alloc(){
                 std::scoped_lock lock{m_PoolLock};
@@ -84,7 +61,6 @@ namespace Core{
                 DataFrame<T, PoolSize> AvailableResource{m_Available.back()};
                 m_Available.pop_back();
                 m_InUse.push_back(AvailableResource);
-                PrintDebugInfo();
                 return AvailableResource;
             };
         };
@@ -103,10 +79,6 @@ namespace Core{
               m_PoolRef{frame.m_PoolRef.get()}{
             }
 
-            void PrintHash() const {
-              std::cout << std::hex << m_DataFrameCopy.get() << std::endl;
-            }
-
             DataFrame& operator = (const T rhs){
                 *m_DataFrameCopy = rhs;
                 return *this;
@@ -114,7 +86,6 @@ namespace Core{
 
             DataFrame& operator = (const DataFrame& rhs){
                 if(m_DataFrameCopy.use_count()<=2){
-                  std::cout << "release mem" << std::endl;
                   m_PoolRef.get().Release(*this);
                 }
 
@@ -137,7 +108,6 @@ namespace Core{
 
             ~DataFrame(){
                 if(m_DataFrameCopy.use_count()==1){
-                    std::cout << "Releasing memory" << std::endl;
                     m_PoolRef.get().Release(*this);
                 }
             }
